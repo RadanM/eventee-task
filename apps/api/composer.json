@@ -1,0 +1,37 @@
+{
+	"$schema": "https://getcomposer.org/schema.json",
+	"name": "eventee/interview-task",
+	"type": "project",
+	"license": "MIT",
+	"require": {
+		"php": "^8.4",
+		"laravel/framework": "^12.0",
+		"laravel/tinker": "^2.10.1"
+	},
+	"require-dev": {
+		"laravel/sail": "^1.41",
+		"phpunit/phpunit": "^12.4.0"
+	},
+	"autoload": {
+		"psr-4": {
+			"Api\\Source\\": "source/",
+			"Tests\\": "tests/"
+		}
+	},
+	"extra": {
+		"laravel": {
+			"dont-discover": []
+		}
+	},
+	"config": {
+		"optimize-autoloader": true,
+		"preferred-install": "dist",
+		"sort-packages": true,
+		"allow-plugins": {
+			"pestphp/pest-plugin": true,
+			"php-http/discovery": true
+		}
+	},
+	"minimum-stability": "stable",
+	"prefer-stable": true
+}
