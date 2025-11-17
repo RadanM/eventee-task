@@ -11,4 +11,5 @@ Route::post('/registerUser', Controllers\RegisterUserController::class);
 
 Route::middleware([Api\Source\Http\Middlewares\EnsureTokenIsValid::class])->group(function () {
 	Route::post('/createChatRoom', Controllers\CreateChatRoomController::class);
+	Route::get('/showChatRooms', Controllers\ShowChatRoomsController::class);
 });

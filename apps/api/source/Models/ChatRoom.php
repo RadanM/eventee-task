@@ -15,4 +15,14 @@ final class ChatRoom extends Model
 		'user_ids_hash',
 	];
 
+	/**
+	 * @return array<int>
+	 */
+	public function getUserIds(): array
+	{
+		return $this->user_ids_hash === null
+			? []
+			: explode('-', base64_decode($this->user_ids_hash));
+	}
+
 }
