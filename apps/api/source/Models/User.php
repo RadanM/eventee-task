@@ -10,6 +10,8 @@ use Tymon\JWTAuth\Contracts\JWTSubject;
 final class User extends Authenticatable implements JWTSubject
 {
 
+	protected $connection = 'mysql';
+
 	protected $table = 'users';
 
 	protected $fillable = [
@@ -52,7 +54,10 @@ final class User extends Authenticatable implements JWTSubject
 	{
 		return $this->chat_rooms_ids_hash === null
 			? []
-			: explode('-', base64_decode($this->chat_rooms_ids_hash));
+			: array_map(
+				static fn ($id) => (int) $id,
+				explode('-', base64_decode($this->chat_rooms_ids_hash))
+			);
 	}
 
 }

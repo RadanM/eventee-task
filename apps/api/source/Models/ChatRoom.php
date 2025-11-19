@@ -4,9 +4,7 @@ declare(strict_types=1);
 
 namespace Api\Source\Models;
 
-use Illuminate\Database\Eloquent\Model;
-
-final class ChatRoom extends Model
+final class ChatRoom extends MetaModel
 {
 
 	protected $table = 'chat_rooms';

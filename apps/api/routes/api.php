@@ -13,4 +13,6 @@ Route::middleware([Api\Source\Http\Middlewares\EnsureTokenIsValid::class])->grou
 	Route::post('/createChatRoom', Controllers\CreateChatRoomController::class);
 	Route::get('/listAvailableUsers', Controllers\ListAvailableUsersController::class);
 	Route::get('/showChatRooms', Controllers\ShowChatRoomsController::class);
+	Route::get('/showMessages', Controllers\ShowMessagesController::class);
+	Route::post('/storeMessage', Controllers\StoreMessageController::class);
 });
